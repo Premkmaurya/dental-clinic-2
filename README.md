@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Dental Clinic (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small marketing and booking frontend for a dental clinic built with React, TypeScript, Vite and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive marketing pages (Home, Services, About, Contact)
+- Booking form + booking flow and success page
+- Doctors listing and profile pages
+- Image gallery and testimonials carousel
+- SEO helpers and shared components
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Prerequisites: Node.js (18+ recommended) and npm or yarn.
 
-## Expanding the ESLint configuration
+Install dependencies:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Run the dev server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run linters:
+
+```bash
+npm run lint
+```
+
+## Project structure (important files)
+
+- `src/main.tsx` — App bootstrap
+- `src/App.tsx` — Root app component
+- `src/layouts/MainLayout.tsx` — Primary layout and navigation
+- `src/pages/` — Route pages (Home, Services, Booking, etc.)
+- `src/components/` — Reusable UI components
+- `src/context/` — React contexts (booking, theme)
+- `src/data/` — Static content and fixture data
+
+## Scripts
+
+- `dev` — start Vite dev server with HMR
+- `build` — Type-check and build production assets
+- `preview` — preview production build
+- `lint` — run ESLint across the project
+
+## Notes & next steps
+
+- The app uses Tailwind CSS for styling; see `tailwind.config.js` for theme tokens.
+- If you add type-aware ESLint rules, update `tsconfig.app.json` paths referenced by the linter.
+
+If you'd like, I can:
+
+- add a short usage section for contributors
+- include environment variable examples
+- generate a minimal deployment guide
+
+---
+Updated to match this repository's structure and scripts.
