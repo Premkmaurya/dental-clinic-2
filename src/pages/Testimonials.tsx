@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, MessageSquare, Quote } from 'lucide-react';
 import SEO from '../components/SEO';
-import TestimonialCarousel from '../components/TestimonialCarousel';
+import { StaggerTestimonials } from '@/components/ui/stagger-testimonials';
 import SharedCTA from '../components/SharedCTA';
 import ScrollReveal from '../components/ScrollReveal';
 import { googleReviews } from '../data/localSeoData';
@@ -34,7 +34,7 @@ export const Testimonials: React.FC = () => {
             Featured Transformations
           </h3>
           <ScrollReveal>
-            <TestimonialCarousel />
+            <StaggerTestimonials />
           </ScrollReveal>
         </div>
 

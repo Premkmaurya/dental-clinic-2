@@ -93,7 +93,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         href="https://wa.me/15551234567"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300 group"
+        className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300 group"
         title="Chat on WhatsApp"
         aria-label="WhatsApp chat"
       >
@@ -142,7 +142,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 md:bottom-28 md:right-8 z-40 w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+          className="fixed bottom-40 right-6 md:bottom-28 md:right-8 z-40 w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
           aria-label="Scroll to top"
         >
           <ChevronUp className="w-5 h-5" />

@@ -9,7 +9,7 @@ import { useCountUp } from '../hooks/useCountUp';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import TestimonialCarousel from '../components/TestimonialCarousel';
+import { StaggerTestimonials } from '@/components/ui/stagger-testimonials';
 import Accordion from '../components/Accordion';
 import SharedCTA from '../components/SharedCTA';
 import { getDentistSchema } from '../data/localSeoData';
@@ -287,7 +287,7 @@ export const Home: React.FC = () => {
           </div>
 
           <ScrollReveal direction="up">
-            <TestimonialCarousel />
+            <StaggerTestimonials />
           </ScrollReveal>
         </div>
       </section>
