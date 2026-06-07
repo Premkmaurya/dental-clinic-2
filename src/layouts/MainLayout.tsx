@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ExitIntentPopup from '../components/ExitIntentPopup';
 import BookingForm from '../components/BookingForm';
+import LoadingScreen from '../components/LoadingScreen';
 
 // Scroll to top helper on route transitions
 const ScrollToTop = () => {
@@ -27,15 +28,16 @@ interface MainLayoutProps {
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const { isBookingOpen, openBooking, closeBooking } = useBooking();
   const location = useLocation();
+  const [isLoading, setIsLoading] = React.useState(true);
 
   // Close booking modal when route changes
   useEffect(() => {
     closeBooking();
   }, [location.pathname]);
 
-  // Lock body scroll when booking modal is open
+  // Lock body scroll when booking modal or loading screen is active
   useEffect(() => {
-    if (isBookingOpen) {
+    if (isBookingOpen || isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -43,7 +45,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isBookingOpen]);
+  }, [isBookingOpen, isLoading]);
 
   // Scroll to top button visibility trigger
   const [showScrollTop, setShowScrollTop] = React.useState(false);
@@ -61,6 +63,12 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 flex flex-col justify-between transition-colors duration-300">
+      <AnimatePresence mode="popLayout">
+        {isLoading && (
+          <LoadingScreen onFinished={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
       <ScrollToTop />
       <ExitIntentPopup />
       
