@@ -43,15 +43,15 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinished }) => {
       initial={{ y: 0 }}
       exit={{ y: "-100%" }}
       transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[200] bg-[#FF4A22] flex flex-col justify-between p-6 select-none overflow-hidden"
+      className="fixed inset-0 z-[200] bg-slate-950 flex flex-col justify-between p-6 select-none overflow-hidden"
     >
       {/* Top Black Bar */}
-      <div className="w-full bg-black rounded-xl py-3 px-6 flex justify-between items-center text-white font-mono text-[9px] sm:text-[11px] tracking-[0.2em]">
+      <div className="w-full bg-slate-900 border border-slate-800/80 rounded-xl py-3 px-6 flex justify-between items-center text-slate-100 font-mono text-[9px] sm:text-[11px] tracking-[0.2em]">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#FF4A22] animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4FB3BF] animate-pulse" />
           <span>SMILECARE // CLINIC</span>
         </div>
-        <div>PREMIUM DENTAL PRACTICE</div>
+        <div className="text-[#4FB3BF]">PREMIUM DENTAL PRACTICE</div>
       </div>
 
       {/* Center content spacer */}
@@ -61,13 +61,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinished }) => {
       <div className="w-full flex justify-between items-end">
         {/* Left Side: Brand Icon Container */}
         <div className="mb-4">
-          <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-black/10 hover:scale-105 transition-transform duration-300">
-            <Heart className="w-6 h-6 fill-[#FF4A22] text-[#FF4A22] animate-pulse" />
+          <div className="w-14 h-14 bg-slate-900 border border-slate-800/80 rounded-2xl flex items-center justify-center shadow-lg shadow-black/20 hover:scale-105 transition-transform duration-300">
+            <Heart className="w-6 h-6 fill-[#4FB3BF] text-[#4FB3BF] animate-pulse" />
           </div>
         </div>
 
         {/* Right Side: Giant Counter */}
-        <div className="font-sans font-extrabold text-[8rem] sm:text-[12rem] md:text-[15rem] lg:text-[18rem] text-black leading-[0.8] tracking-tighter pr-2 select-none">
+        <div className="font-sans font-extrabold text-[8rem] sm:text-[12rem] md:text-[15rem] lg:text-[18rem] text-slate-100 leading-[0.8] tracking-tighter pr-2 select-none">
           {count < 10 ? `0${count}` : count}
         </div>
       </div>

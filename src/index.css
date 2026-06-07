@@ -85,7 +85,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: transparent !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -95,6 +95,12 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0F4C81;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: #CBD5E1 transparent;
+  scrollbar-width: thin;
 }
 
 /* Remove default scrollbars for carousels */
